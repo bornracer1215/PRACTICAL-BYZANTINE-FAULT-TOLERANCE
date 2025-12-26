@@ -1,0 +1,191 @@
+Admin log for Set 10
+Live nodes: [0, 1, 2, 3, 4, 5, 6]
+Byzantine nodes: [6]
+Attack types: ['dark']
+Dark nodes: [0, 1]
+Equivocation nodes: []
+Transactions (50): [('A', 'B', 1), ('B', 'C', 1), ('C', 'D', 1), ('D', 'E', 1), ('E', 'F', 1), ('F', 'G', 1), ('G', 'H', 1), ('H', 'I', 1), ('I', 'J', 2), ('J', 'A', 2), ('A', 'B', 1), ('B', 'C', 1), ('C', 'D', 1), ('D', 'E', 1), ('E', 'F', 1), ('F', 'G', 1), ('G', 'H', 2), ('H', 'I', 2), ('I', 'J', 1), ('J', 'A', 1), ('A', 'B', 1), ('B', 'C', 1), ('C', 'D', 1), ('D', 'E', 1), ('E', 'F', 2), ('F', 'G', 2), ('G', 'H', 1), ('H', 'I', 1), ('I', 'J', 1), ('J', 'A', 1), ('A', 'B', 1), ('B', 'C', 1), ('C', 'D', 2), ('D', 'E', 2), ('E', 'F', 1), ('F', 'G', 1), ('G', 'H', 1), ('H', 'I', 1), ('I', 'J', 1), ('J', 'A', 1), ('A', 'B', 2), ('B', 'C', 2), ('C', 'D', 1), ('D', 'E', 1), ('E', 'F', 1), ('F', 'G', 1), ('G', 'H', 1), ('H', 'I', 1), ('I', 'J', 1), ('J', 'A', 1)]
+
+  server[0] -> RECOVER; ok=True; resp=OK
+  server[1] -> RECOVER; ok=True; resp=OK
+  server[2] -> RECOVER; ok=True; resp=OK
+  server[3] -> RECOVER; ok=True; resp=OK
+  server[4] -> RECOVER; ok=True; resp=OK
+  server[5] -> RECOVER; ok=True; resp=OK
+  server[6] -> RECOVER; ok=True; resp=OK
+  byz server[6] RECOVER; ok=True; resp=OK
+  byz server[6] ATTACK DARK 0,1; ok=True; resp=ATTACK-DARK-ENABLED-[0, 1]
+
+View 0 established successfully
+  Primary: node[0]
+  Backups: [1, 2, 3, 4, 5, 6]
+  Byzantine nodes: [6]
+  Dark nodes (isolated): [0, 1]
+
+Clients controller response: {"type": "DONE", "set_num": 10, "completed": 50, "successful": 0}
+
+=== RESULTS for set 10 ===
+Live nodes: [0, 1, 2, 3, 4, 5, 6]
+Byzantine nodes: [6]
+Attack types: ['dark']
+Dark nodes: [0, 1]
+Equivocation nodes: []
+
+-- FINAL DATABASE STATE from live nodes --
+ node[0] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[1] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[2] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[3] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[4] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[5] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[6] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+
+[OK] All live replicas agree on DB state.
+
+-- PRINTLOG previews --
+ node[0] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "bc9a7ba6eff2222e289cb49916ebbc67abb64a93e8ee0199e9cf358bc91067d5", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "2a167c3cb9ee51a1a38226c791bc6fbcad7e2de7321616d9dd99460171fa5229", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 5, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed
+ node[1] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "bc9a7ba6eff2222e289cb49916ebbc67abb64a93e8ee0199e9cf358bc91067d5", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "2a167c3cb9ee51a1a38226c791bc6fbcad7e2de7321616d9dd99460171fa5229", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 5, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed
+ node[2] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "bc9a7ba6eff2222e289cb49916ebbc67abb64a93e8ee0199e9cf358bc91067d5", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "2a167c3cb9ee51a1a38226c791bc6fbcad7e2de7321616d9dd99460171fa5229", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 5, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed
+ node[3] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "bc9a7ba6eff2222e289cb49916ebbc67abb64a93e8ee0199e9cf358bc91067d5", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "2a167c3cb9ee51a1a38226c791bc6fbcad7e2de7321616d9dd99460171fa5229", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 5, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed
+ node[4] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "bc9a7ba6eff2222e289cb49916ebbc67abb64a93e8ee0199e9cf358bc91067d5", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "2a167c3cb9ee51a1a38226c791bc6fbcad7e2de7321616d9dd99460171fa5229", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 5, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed
+ node[5] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "bc9a7ba6eff2222e289cb49916ebbc67abb64a93e8ee0199e9cf358bc91067d5", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "2a167c3cb9ee51a1a38226c791bc6fbcad7e2de7321616d9dd99460171fa5229", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 5, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed
+ node[6] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "bc9a7ba6eff2222e289cb49916ebbc67abb64a93e8ee0199e9cf358bc91067d5", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "2a167c3cb9ee51a1a38226c791bc6fbcad7e2de7321616d9dd99460171fa5229", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 5, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed
+
+-- PRINTVIEW previews --
+ node[0] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[1] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[2] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[3] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[4] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[5] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[6] VIEW: []
+
+-- CHECKPOINTS from live nodes --
+ node[0] CHECKPOINTS:
+   Stable checkpoint: 48
+   seq=3, digest=d933866378d82c78..., certs=6 [STABLE]
+   seq=6, digest=592af26b8c22cab5..., certs=6 [STABLE]
+   seq=9, digest=c171d9d23462a90a..., certs=6 [STABLE]
+   seq=12, digest=3ecdcc3a32ca519f..., certs=6 [STABLE]
+   seq=15, digest=3b263a1f7c1a26b6..., certs=6 [STABLE]
+   seq=18, digest=828e029cfaea0e71..., certs=1 [STABLE]
+   seq=21, digest=b56a20dc06b29e92..., certs=6 [STABLE]
+   seq=24, digest=7525f5f6bf94982f..., certs=6 [STABLE]
+   seq=27, digest=e928c9cdb11a0a4a..., certs=6 [STABLE]
+   seq=30, digest=67a9f225352c1c51..., certs=6 [STABLE]
+   seq=33, digest=1227ec1f8441191f..., certs=6 [STABLE]
+   seq=36, digest=3fbba7bc98d3992f..., certs=6 [STABLE]
+   seq=39, digest=142b4b9021b7ff95..., certs=7 [STABLE]
+   seq=42, digest=2012009bea2d9643..., certs=1 [STABLE]
+   seq=45, digest=ca2abb2a0f7759d1..., certs=6 [STABLE]
+   seq=48, digest=278dccad63bd9fb7..., certs=6 [STABLE]
+ node[1] CHECKPOINTS:
+   Stable checkpoint: 48
+   seq=3, digest=d933866378d82c78..., certs=6 [STABLE]
+   seq=6, digest=592af26b8c22cab5..., certs=6 [STABLE]
+   seq=9, digest=c171d9d23462a90a..., certs=6 [STABLE]
+   seq=12, digest=3ecdcc3a32ca519f..., certs=6 [STABLE]
+   seq=15, digest=3b263a1f7c1a26b6..., certs=6 [STABLE]
+   seq=18, digest=828e029cfaea0e71..., certs=6 [STABLE]
+   seq=21, digest=b56a20dc06b29e92..., certs=6 [STABLE]
+   seq=24, digest=7525f5f6bf94982f..., certs=6 [STABLE]
+   seq=27, digest=e928c9cdb11a0a4a..., certs=6 [STABLE]
+   seq=30, digest=67a9f225352c1c51..., certs=6 [STABLE]
+   seq=33, digest=1227ec1f8441191f..., certs=6 [STABLE]
+   seq=36, digest=3fbba7bc98d3992f..., certs=6 [STABLE]
+   seq=39, digest=142b4b9021b7ff95..., certs=6 [STABLE]
+   seq=42, digest=2012009bea2d9643..., certs=6 [STABLE]
+   seq=45, digest=ca2abb2a0f7759d1..., certs=6 [STABLE]
+   seq=48, digest=278dccad63bd9fb7..., certs=6 [STABLE]
+ node[2] CHECKPOINTS:
+   Stable checkpoint: 48
+   seq=3, digest=d933866378d82c78..., certs=7 [STABLE]
+   seq=6, digest=592af26b8c22cab5..., certs=7 [STABLE]
+   seq=9, digest=c171d9d23462a90a..., certs=7 [STABLE]
+   seq=12, digest=3ecdcc3a32ca519f..., certs=7 [STABLE]
+   seq=15, digest=3b263a1f7c1a26b6..., certs=7 [STABLE]
+   seq=18, digest=828e029cfaea0e71..., certs=7 [STABLE]
+   seq=21, digest=b56a20dc06b29e92..., certs=7 [STABLE]
+   seq=24, digest=7525f5f6bf94982f..., certs=7 [STABLE]
+   seq=27, digest=e928c9cdb11a0a4a..., certs=7 [STABLE]
+   seq=30, digest=67a9f225352c1c51..., certs=7 [STABLE]
+   seq=33, digest=1227ec1f8441191f..., certs=7 [STABLE]
+   seq=36, digest=3fbba7bc98d3992f..., certs=7 [STABLE]
+   seq=39, digest=142b4b9021b7ff95..., certs=7 [STABLE]
+   seq=42, digest=2012009bea2d9643..., certs=7 [STABLE]
+   seq=45, digest=ca2abb2a0f7759d1..., certs=7 [STABLE]
+   seq=48, digest=278dccad63bd9fb7..., certs=7 [STABLE]
+ node[3] CHECKPOINTS:
+   Stable checkpoint: 48
+   seq=3, digest=d933866378d82c78..., certs=7 [STABLE]
+   seq=6, digest=592af26b8c22cab5..., certs=7 [STABLE]
+   seq=9, digest=c171d9d23462a90a..., certs=7 [STABLE]
+   seq=12, digest=3ecdcc3a32ca519f..., certs=7 [STABLE]
+   seq=15, digest=3b263a1f7c1a26b6..., certs=7 [STABLE]
+   seq=18, digest=828e029cfaea0e71..., certs=7 [STABLE]
+   seq=21, digest=b56a20dc06b29e92..., certs=7 [STABLE]
+   seq=24, digest=7525f5f6bf94982f..., certs=7 [STABLE]
+   seq=27, digest=e928c9cdb11a0a4a..., certs=7 [STABLE]
+   seq=30, digest=67a9f225352c1c51..., certs=7 [STABLE]
+   seq=33, digest=1227ec1f8441191f..., certs=7 [STABLE]
+   seq=36, digest=3fbba7bc98d3992f..., certs=7 [STABLE]
+   seq=39, digest=142b4b9021b7ff95..., certs=7 [STABLE]
+   seq=42, digest=2012009bea2d9643..., certs=7 [STABLE]
+   seq=45, digest=ca2abb2a0f7759d1..., certs=7 [STABLE]
+   seq=48, digest=278dccad63bd9fb7..., certs=7 [STABLE]
+ node[4] CHECKPOINTS:
+   Stable checkpoint: 48
+   seq=3, digest=d933866378d82c78..., certs=7 [STABLE]
+   seq=6, digest=592af26b8c22cab5..., certs=7 [STABLE]
+   seq=9, digest=c171d9d23462a90a..., certs=7 [STABLE]
+   seq=12, digest=3ecdcc3a32ca519f..., certs=7 [STABLE]
+   seq=15, digest=3b263a1f7c1a26b6..., certs=7 [STABLE]
+   seq=18, digest=828e029cfaea0e71..., certs=7 [STABLE]
+   seq=21, digest=b56a20dc06b29e92..., certs=7 [STABLE]
+   seq=24, digest=7525f5f6bf94982f..., certs=7 [STABLE]
+   seq=27, digest=e928c9cdb11a0a4a..., certs=7 [STABLE]
+   seq=30, digest=67a9f225352c1c51..., certs=7 [STABLE]
+   seq=33, digest=1227ec1f8441191f..., certs=7 [STABLE]
+   seq=36, digest=3fbba7bc98d3992f..., certs=7 [STABLE]
+   seq=39, digest=142b4b9021b7ff95..., certs=7 [STABLE]
+   seq=42, digest=2012009bea2d9643..., certs=7 [STABLE]
+   seq=45, digest=ca2abb2a0f7759d1..., certs=7 [STABLE]
+   seq=48, digest=278dccad63bd9fb7..., certs=7 [STABLE]
+ node[5] CHECKPOINTS:
+   Stable checkpoint: 48
+   seq=3, digest=d933866378d82c78..., certs=7 [STABLE]
+   seq=6, digest=592af26b8c22cab5..., certs=7 [STABLE]
+   seq=9, digest=c171d9d23462a90a..., certs=7 [STABLE]
+   seq=12, digest=3ecdcc3a32ca519f..., certs=7 [STABLE]
+   seq=15, digest=3b263a1f7c1a26b6..., certs=7 [STABLE]
+   seq=18, digest=828e029cfaea0e71..., certs=7 [STABLE]
+   seq=21, digest=b56a20dc06b29e92..., certs=7 [STABLE]
+   seq=24, digest=7525f5f6bf94982f..., certs=7 [STABLE]
+   seq=27, digest=e928c9cdb11a0a4a..., certs=7 [STABLE]
+   seq=30, digest=67a9f225352c1c51..., certs=7 [STABLE]
+   seq=33, digest=1227ec1f8441191f..., certs=7 [STABLE]
+   seq=36, digest=3fbba7bc98d3992f..., certs=7 [STABLE]
+   seq=39, digest=142b4b9021b7ff95..., certs=7 [STABLE]
+   seq=42, digest=2012009bea2d9643..., certs=7 [STABLE]
+   seq=45, digest=ca2abb2a0f7759d1..., certs=7 [STABLE]
+   seq=48, digest=278dccad63bd9fb7..., certs=7 [STABLE]
+ node[6] CHECKPOINTS:
+   Stable checkpoint: 48
+   seq=3, digest=d933866378d82c78..., certs=7 [STABLE]
+   seq=6, digest=592af26b8c22cab5..., certs=7 [STABLE]
+   seq=9, digest=c171d9d23462a90a..., certs=7 [STABLE]
+   seq=12, digest=3ecdcc3a32ca519f..., certs=7 [STABLE]
+   seq=15, digest=3b263a1f7c1a26b6..., certs=7 [STABLE]
+   seq=18, digest=828e029cfaea0e71..., certs=7 [STABLE]
+   seq=21, digest=b56a20dc06b29e92..., certs=7 [STABLE]
+   seq=24, digest=7525f5f6bf94982f..., certs=7 [STABLE]
+   seq=27, digest=e928c9cdb11a0a4a..., certs=7 [STABLE]
+   seq=30, digest=67a9f225352c1c51..., certs=7 [STABLE]
+   seq=33, digest=1227ec1f8441191f..., certs=7 [STABLE]
+   seq=36, digest=3fbba7bc98d3992f..., certs=7 [STABLE]
+   seq=39, digest=142b4b9021b7ff95..., certs=7 [STABLE]
+   seq=42, digest=2012009bea2d9643..., certs=7 [STABLE]
+   seq=45, digest=ca2abb2a0f7759d1..., certs=7 [STABLE]
+   seq=48, digest=278dccad63bd9fb7..., certs=7 [STABLE]
+
+=== End results for set 10 ===

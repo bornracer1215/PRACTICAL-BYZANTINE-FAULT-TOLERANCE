@@ -1,0 +1,70 @@
+Admin log for Set 2
+Live nodes: [0, 1, 2, 3, 4]
+Byzantine nodes: []
+Attack types: []
+Dark nodes: []
+Equivocation nodes: []
+Transactions (5): [('F', 'G', 12), ('G', 'H', 1), ('H', 'I', 11), ('I', 'J', 11), ('READ', 'J')]
+
+  server[0] -> RECOVER; ok=True; resp=OK
+  server[1] -> RECOVER; ok=True; resp=OK
+  server[2] -> RECOVER; ok=True; resp=OK
+  server[3] -> RECOVER; ok=True; resp=OK
+  server[4] -> RECOVER; ok=True; resp=OK
+  server[5] -> FAIL; ok=True; resp=OK
+  server[6] -> FAIL; ok=True; resp=OK
+
+View 0 established successfully
+  Primary: node[0]
+  Backups: [1, 2, 3, 4]
+
+Clients controller response: {"type": "DONE", "set_num": 2, "completed": 5, "successful": 1}
+
+=== RESULTS for set 2 ===
+Live nodes: [0, 1, 2, 3, 4]
+Byzantine nodes: []
+Attack types: []
+Dark nodes: []
+Equivocation nodes: []
+
+-- FINAL DATABASE STATE from live nodes --
+ node[0] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 9, "H": 0, "I": 10, "J": 21}
+ node[1] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 9, "H": 0, "I": 10, "J": 21}
+ node[2] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 9, "H": 0, "I": 10, "J": 21}
+ node[3] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 9, "H": 0, "I": 10, "J": 21}
+ node[4] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 9, "H": 0, "I": 10, "J": 21}
+
+[OK] All live replicas agree on DB state.
+
+-- PRINTLOG previews --
+ node[0] LOG: [{"seq": 1, "digest": "a8ce25921042d434347b7ee36538463654974a8c9206f7e7dfbccf7606b4c2c0", "prepared": true, "committed": true, "executed": true, "result": "insufficient-funds"}, {"seq": 2, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "696fc2a42628ec5415bf5b6df960c0282598f7f79655234b2336499718c040c4", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "dd19b7ede342738ecc2f6cdbe60ae56fe5139480331cf43885f4b08624daca41", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+ node[1] LOG: [{"seq": 1, "digest": "a8ce25921042d434347b7ee36538463654974a8c9206f7e7dfbccf7606b4c2c0", "prepared": true, "committed": true, "executed": true, "result": "insufficient-funds"}, {"seq": 2, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "696fc2a42628ec5415bf5b6df960c0282598f7f79655234b2336499718c040c4", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "dd19b7ede342738ecc2f6cdbe60ae56fe5139480331cf43885f4b08624daca41", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+ node[2] LOG: [{"seq": 1, "digest": "a8ce25921042d434347b7ee36538463654974a8c9206f7e7dfbccf7606b4c2c0", "prepared": true, "committed": true, "executed": true, "result": "insufficient-funds"}, {"seq": 2, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "696fc2a42628ec5415bf5b6df960c0282598f7f79655234b2336499718c040c4", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "dd19b7ede342738ecc2f6cdbe60ae56fe5139480331cf43885f4b08624daca41", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+ node[3] LOG: [{"seq": 1, "digest": "a8ce25921042d434347b7ee36538463654974a8c9206f7e7dfbccf7606b4c2c0", "prepared": true, "committed": true, "executed": true, "result": "insufficient-funds"}, {"seq": 2, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "696fc2a42628ec5415bf5b6df960c0282598f7f79655234b2336499718c040c4", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "dd19b7ede342738ecc2f6cdbe60ae56fe5139480331cf43885f4b08624daca41", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+ node[4] LOG: [{"seq": 1, "digest": "a8ce25921042d434347b7ee36538463654974a8c9206f7e7dfbccf7606b4c2c0", "prepared": true, "committed": true, "executed": true, "result": "insufficient-funds"}, {"seq": 2, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "696fc2a42628ec5415bf5b6df960c0282598f7f79655234b2336499718c040c4", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "dd19b7ede342738ecc2f6cdbe60ae56fe5139480331cf43885f4b08624daca41", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+
+-- PRINTVIEW previews --
+ node[0] VIEW: []
+ node[1] VIEW: []
+ node[2] VIEW: []
+ node[3] VIEW: []
+ node[4] VIEW: []
+
+-- CHECKPOINTS from live nodes --
+ node[0] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=55e7ecaa4efebacd..., certs=5 [STABLE]
+ node[1] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=55e7ecaa4efebacd..., certs=5 [STABLE]
+ node[2] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=55e7ecaa4efebacd..., certs=5 [STABLE]
+ node[3] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=55e7ecaa4efebacd..., certs=5 [STABLE]
+ node[4] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=55e7ecaa4efebacd..., certs=5 [STABLE]
+
+=== End results for set 2 ===

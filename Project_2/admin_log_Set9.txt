@@ -1,0 +1,87 @@
+Admin log for Set 9
+Live nodes: [0, 1, 2, 3, 4, 5, 6]
+Byzantine nodes: [0, 1]
+Attack types: ['crash']
+Dark nodes: []
+Equivocation nodes: []
+Transactions (5): [('A', 'B', 1), ('C', 'D', 1), ('E', 'F', 1), ('G', 'H', 1), ('READ', 'H')]
+
+  server[0] -> RECOVER; ok=True; resp=OK
+  server[1] -> RECOVER; ok=True; resp=OK
+  server[2] -> RECOVER; ok=True; resp=OK
+  server[3] -> RECOVER; ok=True; resp=OK
+  server[4] -> RECOVER; ok=True; resp=OK
+  server[5] -> RECOVER; ok=True; resp=OK
+  server[6] -> RECOVER; ok=True; resp=OK
+  byz server[0] RECOVER; ok=True; resp=OK
+  byz server[0] ATTACK CRASH; ok=True; resp=ATTACK-CRASH-ENABLED
+  byz server[1] RECOVER; ok=True; resp=OK
+  byz server[1] ATTACK CRASH; ok=True; resp=ATTACK-CRASH-ENABLED
+
+View 2 established successfully
+  Primary: node[2]
+  Backups: [0, 1, 3, 4, 5, 6]
+  Byzantine nodes: [0, 1]
+
+Clients controller response: {"type": "DONE", "set_num": 9, "completed": 5, "successful": 1}
+
+=== RESULTS for set 9 ===
+Live nodes: [0, 1, 2, 3, 4, 5, 6]
+Byzantine nodes: [0, 1]
+Attack types: ['crash']
+Dark nodes: []
+Equivocation nodes: []
+
+-- FINAL DATABASE STATE from live nodes --
+ node[0] DB: {"A": 9, "B": 11, "C": 9, "D": 11, "E": 9, "F": 11, "G": 9, "H": 11, "I": 10, "J": 10}
+ node[1] DB: {"A": 9, "B": 11, "C": 9, "D": 11, "E": 9, "F": 11, "G": 9, "H": 11, "I": 10, "J": 10}
+ node[2] DB: {"A": 9, "B": 11, "C": 9, "D": 11, "E": 9, "F": 11, "G": 9, "H": 11, "I": 10, "J": 10}
+ node[3] DB: {"A": 9, "B": 11, "C": 9, "D": 11, "E": 9, "F": 11, "G": 9, "H": 11, "I": 10, "J": 10}
+ node[4] DB: {"A": 9, "B": 11, "C": 9, "D": 11, "E": 9, "F": 11, "G": 9, "H": 11, "I": 10, "J": 10}
+ node[5] DB: {"A": 9, "B": 11, "C": 9, "D": 11, "E": 9, "F": 11, "G": 9, "H": 11, "I": 10, "J": 10}
+ node[6] DB: {"A": 9, "B": 11, "C": 9, "D": 11, "E": 9, "F": 11, "G": 9, "H": 11, "I": 10, "J": 10}
+
+[OK] All live replicas agree on DB state.
+
+-- PRINTLOG previews --
+ node[0] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": false, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": false, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": false, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": false, "committed": true, "executed": true, "result": "success"}]
+ node[1] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": false, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": false, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": false, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": false, "committed": true, "executed": true, "result": "success"}]
+ node[2] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+ node[3] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+ node[4] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+ node[5] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+ node[6] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 2, "digest": "b0023e1fcfbb06b4bca2290d6c870ddff59164a8cf3b8142d530d7c24f78bf5e", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 3, "digest": "64b09c9bb7974a1538403fee8e617071199e06f26eae8c91390f749dbc4c5f4c", "prepared": true, "committed": true, "executed": true, "result": "success"}, {"seq": 4, "digest": "54fff290cd54564e44ea10e1b39f5f089b5c2a7da50cd7f8b9a3443685069c21", "prepared": true, "committed": true, "executed": true, "result": "success"}]
+
+-- PRINTVIEW previews --
+ node[0] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[1] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[2] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[3] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[4] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[5] VIEW: [{"type": "NEW-VIEW", "view": 1, "view_changes": [{"type": "VIEW-CHANGE", "new_view": 1, "from_node": 2, "prepared": [], "last_executed": 0, "stable_checkpoint": null, "sig": "1e9ad7cb65fbb0d48a5f7964b6dd47a08ac20b7cdd02574154206f946bdb2cd5ac829e30b4df635b840749a283e23bae2222029c913642472aa78fe5b428cf0b"}, {"type": "VIEW-CHANGE", "new_view": 1, "from_node": 1, "prepared": [], "last_executed": 0, "
+ node[6] VIEW: []
+
+-- CHECKPOINTS from live nodes --
+ node[0] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=36de664b0eb1eb6b..., certs=7 [STABLE]
+ node[1] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=36de664b0eb1eb6b..., certs=7 [STABLE]
+ node[2] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=36de664b0eb1eb6b..., certs=7 [STABLE]
+ node[3] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=36de664b0eb1eb6b..., certs=7 [STABLE]
+ node[4] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=36de664b0eb1eb6b..., certs=7 [STABLE]
+ node[5] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=36de664b0eb1eb6b..., certs=7 [STABLE]
+ node[6] CHECKPOINTS:
+   Stable checkpoint: 3
+   seq=3, digest=36de664b0eb1eb6b..., certs=7 [STABLE]
+
+=== End results for set 9 ===

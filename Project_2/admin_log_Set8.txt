@@ -1,0 +1,74 @@
+Admin log for Set 8
+Live nodes: [0, 1, 2, 3, 4, 5]
+Byzantine nodes: [0]
+Attack types: ['equivocation']
+Dark nodes: []
+Equivocation nodes: [4, 5]
+Transactions (5): [('A', 'B', 1), ('C', 'D', 2), ('E', 'F', 3), ('G', 'H', 4), ('READ', 'B')]
+
+  server[0] -> RECOVER; ok=True; resp=OK
+  server[1] -> RECOVER; ok=True; resp=OK
+  server[2] -> RECOVER; ok=True; resp=OK
+  server[3] -> RECOVER; ok=True; resp=OK
+  server[4] -> RECOVER; ok=True; resp=OK
+  server[5] -> RECOVER; ok=True; resp=OK
+  server[6] -> FAIL; ok=True; resp=OK
+  byz server[0] RECOVER; ok=True; resp=OK
+  byz server[0] ATTACK EQUIVOCATION 4,5; ok=True; resp=ATTACK-EQUIVOCATION-ENABLED-[4, 5]
+
+View 0 established successfully
+  Primary: node[0]
+  Backups: [1, 2, 3, 4, 5]
+  Byzantine nodes: [0]
+  Equivocation nodes (alternate seq): [4, 5]
+
+Clients controller response: {"type": "DONE", "set_num": 8, "completed": 5, "successful": 1}
+
+=== RESULTS for set 8 ===
+Live nodes: [0, 1, 2, 3, 4, 5]
+Byzantine nodes: [0]
+Attack types: ['equivocation']
+Dark nodes: []
+Equivocation nodes: [4, 5]
+
+-- FINAL DATABASE STATE from live nodes --
+ node[0] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[1] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[2] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[3] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[4] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+ node[5] DB: {"A": 10, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10, "G": 10, "H": 10, "I": 10, "J": 10}
+
+[OK] All live replicas agree on DB state.
+
+-- PRINTLOG previews --
+ node[0] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 2, "digest": "b2a2dd1a473ac39113273e596b5eaf98b625415073ffa93adbef00dbcaab1b21", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 3, "digest": "d8b0a08eaede71f285b2877f74c892792820bc48fcab40220955bf8b96dde64a", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 4, "digest": "ec702666df87fe141b08158f3bf259679ba9999a750f0e67cc60c8b69bf940c5", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 10001, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": false, "committed": false, "executed":
+ node[1] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 2, "digest": "b2a2dd1a473ac39113273e596b5eaf98b625415073ffa93adbef00dbcaab1b21", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 3, "digest": "d8b0a08eaede71f285b2877f74c892792820bc48fcab40220955bf8b96dde64a", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 4, "digest": "ec702666df87fe141b08158f3bf259679ba9999a750f0e67cc60c8b69bf940c5", "prepared": false, "committed": false, "executed": false, "result": null}]
+ node[2] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 2, "digest": "b2a2dd1a473ac39113273e596b5eaf98b625415073ffa93adbef00dbcaab1b21", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 3, "digest": "d8b0a08eaede71f285b2877f74c892792820bc48fcab40220955bf8b96dde64a", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 4, "digest": "ec702666df87fe141b08158f3bf259679ba9999a750f0e67cc60c8b69bf940c5", "prepared": false, "committed": false, "executed": false, "result": null}]
+ node[3] LOG: [{"seq": 1, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 2, "digest": "b2a2dd1a473ac39113273e596b5eaf98b625415073ffa93adbef00dbcaab1b21", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 3, "digest": "d8b0a08eaede71f285b2877f74c892792820bc48fcab40220955bf8b96dde64a", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 4, "digest": "ec702666df87fe141b08158f3bf259679ba9999a750f0e67cc60c8b69bf940c5", "prepared": false, "committed": false, "executed": false, "result": null}]
+ node[4] LOG: [{"seq": 10001, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 10002, "digest": "b2a2dd1a473ac39113273e596b5eaf98b625415073ffa93adbef00dbcaab1b21", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 10003, "digest": "d8b0a08eaede71f285b2877f74c892792820bc48fcab40220955bf8b96dde64a", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 10004, "digest": "ec702666df87fe141b08158f3bf259679ba9999a750f0e67cc60c8b69bf940c5", "prepared": false, "committed": false, "executed": false, "result": null}]
+ node[5] LOG: [{"seq": 10001, "digest": "d07368741c1d641c074ce06347de52b9d3edd45abedd32657cfae5c9d3a11a64", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 10002, "digest": "b2a2dd1a473ac39113273e596b5eaf98b625415073ffa93adbef00dbcaab1b21", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 10003, "digest": "d8b0a08eaede71f285b2877f74c892792820bc48fcab40220955bf8b96dde64a", "prepared": false, "committed": false, "executed": false, "result": null}, {"seq": 10004, "digest": "ec702666df87fe141b08158f3bf259679ba9999a750f0e67cc60c8b69bf940c5", "prepared": false, "committed": false, "executed": false, "result": null}]
+
+-- PRINTVIEW previews --
+ node[0] VIEW: []
+ node[1] VIEW: []
+ node[2] VIEW: []
+ node[3] VIEW: []
+ node[4] VIEW: []
+ node[5] VIEW: []
+
+-- CHECKPOINTS from live nodes --
+ node[0] CHECKPOINTS:
+   Stable checkpoint: 0
+ node[1] CHECKPOINTS:
+   Stable checkpoint: 0
+ node[2] CHECKPOINTS:
+   Stable checkpoint: 0
+ node[3] CHECKPOINTS:
+   Stable checkpoint: 0
+ node[4] CHECKPOINTS:
+   Stable checkpoint: 0
+ node[5] CHECKPOINTS:
+   Stable checkpoint: 0
+
+=== End results for set 8 ===

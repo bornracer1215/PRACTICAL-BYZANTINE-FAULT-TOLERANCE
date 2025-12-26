@@ -1,0 +1,30 @@
+{
+  "config": {
+    "num_accounts": 10,
+    "num_clients": 10,
+    "duration": 30.22964906692505,
+    "zipf_alpha": 0.9
+  },
+  "summary": {
+    "total_txns": 110,
+    "successful_txns": 110,
+    "throughput": 3.6388116764595035
+  },
+  "latency": {
+    "mean": 17.341117425398394,
+    "median": 15.756368637084961,
+    "p50": 15.756368637084961,
+    "p95": 25.573670864105225,
+    "p99": 27.547824382781982,
+    "min": 0.0,
+    "max": 28.40137481689453
+  },
+  "transaction_types": {
+    "BALANCE": 19,
+    "AMALGAMATE": 18,
+    "DEPOSIT_CHECKING": 17,
+    "TRANSACT_SAVINGS": 16,
+    "WRITE_CHECK": 22,
+    "SEND_PAYMENT": 18
+  }
+}
